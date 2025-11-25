@@ -1,0 +1,131 @@
+:root {
+    --bg: #0d1117;
+    --card-bg: #161b22;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --text-main: #c9d1d9;
+    --text-muted: #8b949e;
+    --value-color: #7ee787; /* Green for values */
+    --warning: #d2a8ff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'JetBrains Mono', monospace; /* Monospace looks like BIOS */
+    line-height: 1.6;
+    padding-bottom: 50px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+.subtitle { color: var(--text-muted); font-size: 0.9rem; }
+
+/* Navigation (Motherboard List) */
+.mobo-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    margin-bottom: 30px;
+}
+
+.mobo-btn {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: all 0.2s;
+}
+
+.mobo-btn:hover, .mobo-btn.active {
+    border-color: var(--accent);
+    background: #1f2937;
+    color: var(--accent);
+}
+
+/* Content Area */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.placeholder { text-align: center; color: var(--text-muted); margin-top: 50px;}
+
+.mobo-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.mobo-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-top: 15px;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+/* Settings Tables */
+.category-block {
+    margin-bottom: 40px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.category-title {
+    background: #21262d;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--accent);
+}
+
+.setting-row {
+    padding: 15px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-row:last-child { border-bottom: none; }
+
+.setting-name { font-weight: bold; color: #fff; margin-bottom: 4px; }
+.setting-value { 
+    color: var(--value-color); 
+    font-weight: bold; 
+    background: rgba(126, 231, 135, 0.1);
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    width: fit-content;
+}
+.setting-desc { font-size: 0.85rem; color: var(--text-muted); }
+
+/* Responsive Grid for Desktop */
+@media (min-width: 600px) {
+    .setting-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: center;
+    }
+    .setting-desc { grid-column: 1 / -1; margin-top: 5px; }
+}
