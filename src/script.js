@@ -48,7 +48,7 @@ const database = [
     {
         id: "gigabyte-b650e",
         name: "Gigabyte B650E AORUS STEALTH",
-        image: "src/images/gigabyte_stealth.jpg", // Make sure this file exists
+        image: "src/images/gigabyte_stealth.png", // Make sure this file exists
         description: "Aorus Ice Optimization. Key locations: 'Tweaker' and 'Settings'.",
         sections: [
             {
@@ -156,4 +156,5 @@ function loadBoard(board) {
 }
 
 // Initialize
+
 renderButtons();
